@@ -1,0 +1,346 @@
+/* ===== GOOGLE FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap');
+
+/* ===== DESIGN VARIABLE TOKENS ===== */
+:root {
+    --bg-main: #0b0f19;
+    --bg-card: rgba(17, 24, 39, 0.65);
+    --primary: #00f2fe;
+    --secondary: #9d4edd;
+    --text-pure: #ffffff;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --border-glass: rgba(0, 242, 254, 0.15);
+}
+
+/* ===== GLOBAL RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background: 
+        linear-gradient(135deg, rgba(11, 15, 25, 0.96), rgba(17, 24, 39, 0.94)),
+        url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2070&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-pure);
+    overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:22px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background: rgba(11, 15, 25, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index:1000;
+    border-bottom: 1px solid var(--border-glass);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.logo{
+    color: var(--text-pure);
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.logo-accent {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+/* ===== SUPER 3D NAVBAR ECOSYSTEM ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.navbar .nav-btn {
+    position: relative;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 22px;
+    background: #121824;
+    border: 1px solid rgba(0, 242, 254, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    /* 3D layer thickness base shadow */
+    box-shadow: 0 5px 0px #00a8dd, 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.navbar .nav-btn:hover {
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 6px 0px var(--primary), 0 10px 25px rgba(0, 242, 254, 0.4);
+    transform: translateY(-2px);
+}
+
+.navbar .nav-btn.active,
+.navbar .nav-btn:active {
+    color: #05070c;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-color: transparent;
+    box-shadow: 0 1px 0px transparent, inset 0 3px 8px rgba(0, 0, 0, 0.6);
+    transform: translateY(5px); /* Lulubog ang pindutan */
+}
+
+/* ===== HOME HERO INTERFACE (SIDE BY SIDE GRID) ===== */
+.home{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 140px 8% 60px;
+    gap: 80px;
+}
+
+.home-content {
+    max-width: 620px;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.main-title {
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--text-pure);
+}
+
+.dev-name {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.3));
+}
+
+.profession {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-pure);
+    margin: 20px 0;
+}
+
+.profession .divider {
+    color: var(--text-dim);
+    margin: 0 10px;
+}
+
+.profession .highlight {
+    color: var(--primary);
+}
+
+.description {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* KANANG HANAY: HEXAGON IMAGE STYLING */
+.home-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.hexagon-glow-back {
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    opacity: 0.25;
+    filter: blur(40px);
+}
+
+.glowing-hexagon {
+    position: relative;
+    width: 410px;
+    height: 410px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0 30px rgba(0, 242, 254, 0.5));
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.glowing-hexagon:hover {
+    transform: translateY(-8px) scale(1.02);
+    filter: drop-shadow(0 0 45px rgba(157, 78, 221, 0.7));
+}
+
+.glowing-hexagon img {
+    width: 96.5%;
+    height: 96.5%;
+    object-fit: cover;
+    background: #0f1422; 
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    gap: 18px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid var(--border-glass);
+    border-radius: 14px;
+    font-size: 22px;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--text-pure);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    transform: translateY(-5px);
+}
+
+/* ===== SYMMETRICAL CARDS BOXES (PANTAY-PANTAY ANG SUKAT) ===== */
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 100px 8% 120px;
+}
+
+.card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 45px 35px;
+    border-radius: 24px;
+    
+    /* Uniform width blocks layout */
+    flex: 1 1 360px; 
+    max-width: 400px; 
+    
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover {
+    border-color: rgba(157, 78, 221, 0.4);
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.card-glow-element {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,242,254,0.05) 0%, transparent 60%);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.card:hover .card-glow-element {
+    opacity: 1;
+}
+
+.card-icon-box {
+    width: 64px;
+    height: 64px;
+    background: rgba(0, 242, 254, 0.06);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border: 1px solid rgba(0, 242, 254, 0.1);
+}
+
+.card:hover .card-icon-box {
+    background: var(--primary);
+    color: #05070c;
+    box-shadow: 0 0 15px var(--primary);
+}
+
+.card i {
+    font-size: 30px;
+    color: var(--primary);
+}
+
+.card:hover i {
+    color: #05070c;
+}
+
+.card h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.card-line {
+    width: 45px;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 2px;
+    margin-bottom: 25px;
+    transition: width 0.3s ease;
+}
+
+.card:hover .card-line {
+    width: 85px;
+    background: var(--primary);
+}
+
+.card p {
+    display: flex;
+    flex-direction: column;
+    gap: 14px; 
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.card:hover p span {
+    color: #e2e8f0;
+}
